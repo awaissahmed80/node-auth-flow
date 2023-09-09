@@ -73,13 +73,14 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
 }
 ```
 - `[GET]` - `{{BASE_URI}}/users [Protected]`
-#####Request
+
+##### Request
 ```
 {
 	Authorization: 'Bearer " + [ACCESS_TOKEN]
 }
 ```
-#####Response
+##### Response
 ```
 {
     "users": [       
