@@ -7,6 +7,7 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
 ### API Endpoints
 
 - `[POST]` - `{{BASE_URI}}/auth/register`
+  
 #####Request
 	```
 {
