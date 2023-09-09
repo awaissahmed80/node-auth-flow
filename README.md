@@ -8,8 +8,8 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
 
 - `[POST]` - `{{BASE_URI}}/auth/register`
   
-#####Request
-	```
+##### Request
+```
 {
     "first_name": "John",
     "last_name": "Doe",
@@ -18,8 +18,9 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
     "confirm_password": "Test1234"
 }
 ```
-#####Response
-	```
+
+##### Response
+```
 {
     "user": {
         "_id": "64fc6c30a69acaf73079674f",
@@ -32,16 +33,19 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
     "refresh_token": [REFRESH_TOKEN]
 }
 ```
+
 - `[POST]` - `{{BASE_URI}}/auth/login`
-#####Request
-	```
+  
+##### Request
+```
 {
     "email_address": "john@email.com",
     "password": "Test1234!",
 }
 ```
-#####Response
-	```
+
+##### Response
+```
 {
     "user": {
         "_id": "64fc6c30a69acaf73079674f",
@@ -55,13 +59,14 @@ Sample Express/Mongoose REST API with JWT authentication/authorization.
 }
 ```
 - `[POST]` - `{{BASE_URI}}/auth/refresh_token`
-#####Request
-	```
+  
+##### Request
+```
 {
     "refresh_token": [REFRESH_TOKEN],
 }
 ```
-#####Response
+##### Response
 ```
 {
     "access_token": [ACCESS_TOKEN],
