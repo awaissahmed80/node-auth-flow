@@ -23,4 +23,30 @@ validator.extend('unique', async ({ value, args }) => {
     return true;
 });
 
+validator.extend('strong_password', ({ value }) => {
+    // default field is email in this example
+        
+    const passwordRequirements = [
+        /^(?=.*[a-z])/,
+        /^(?=.*[A-Z])/,
+        /^(?=.*\d)/,
+        /^(?=.*[!@#$%^&*()_+[\]{}|;:'",.<>?~\\/-])/,
+        /^.{8,}$/,
+      ];  
+    const isValid =  passwordRequirements.every((regex) => regex.test(value));
+
+    // email already exists
+    if (!isValid) {
+        return false;
+    }
+
+    return true;
+});
+
+validator.extendMessages({
+    required: ':attribute is required.',
+    email: ':attribute must be a valid email address.',
+    strong_password: 'The :attribute should be minimum  8 characters and must include at least one uppercase letter, one number, and one special character',    
+  }, 'en');
+
 module.exports = validator

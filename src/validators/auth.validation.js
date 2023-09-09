@@ -23,9 +23,9 @@ const registerRequest = async (req, res, next) => {
         const validator = new niv.Validator(form_data, {
             first_name: "required|string",
             last_name: "required|string",            
-            email_address: 'required|string|email',                        
-            password: 'required|same:confirm_password',
-            confirm_password: "required|same:password"
+            email_address: 'required|string|email|unique:User,email_address',                        
+            password: 'required|strong_password|same:confirm_password`',
+            confirm_password: "required"
         });
         validator.niceNames({
             first_name: "First Name",
