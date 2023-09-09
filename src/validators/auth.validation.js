@@ -24,8 +24,7 @@ const registerRequest = async (req, res, next) => {
             first_name: "required|string",
             last_name: "required|string",            
             email_address: 'required|string|email|unique:User,email_address',                        
-            password: 'required|strong_password|same:confirm_password`',
-            confirm_password: "required"
+            password: 'required|strong_password|same:confirm_password',            
         });
         validator.niceNames({
             first_name: "First Name",
